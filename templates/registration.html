@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+    <form action="" method="post">
+      <p>
+  <label for="name">Your name:</label>
+          <p>You can use any letter<P>
+  <input type="text" name="name" required pattern='^[A-Za-zА-Яа-яЁё]*$'>
+     </p>
+  <p>
+     <label for="login">Login:</label>
+      <p>You can use any letters and numbers for the login<P>
+     <input type="text" name="login" required pattern='^[A-Za-zА-Яа-яЁё-0-9]*$'>
+      </p>
+ <p>
+     <label for="password">Password:</label>
+     <p>You can use any letters and numbers for the password<P>
+     <input type="password" name="password" required pattern='^[A-Za-zА-Яа-яЁё-0-9]+(\s[0-9-A-Za-zА-Яа-яЁё]+)*$'>
+ </p>
+        {% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+ <p>
+     <input type="submit" value="Sign In">
+ </p>
+    </form>
+
+</body>
+</html>
